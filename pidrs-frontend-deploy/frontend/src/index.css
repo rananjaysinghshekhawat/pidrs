@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: #ECEBE4;
+  background-image:
+    linear-gradient(rgba(28,31,34,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28,31,34,0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Blueprint-style corner ticks, used to frame key surfaces */
+.ticket {
+  position: relative;
+  background: #F6F5F0;
+  border: 1px solid rgba(28,31,34,0.15);
+}
+.ticket::before,
+.ticket::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: #1C1F22;
+  opacity: 0.55;
+}
+.ticket::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+.ticket::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+/* Perforated divider, like a tear-off ticket stub */
+.perforation {
+  border-top: 1px dashed rgba(28,31,34,0.3);
+}
+
+/* Rubber-stamp style status badge */
+.stamp {
+  display: inline-block;
+  transform: rotate(-4deg);
+  border: 2px solid currentColor;
+  padding: 2px 10px;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #E19A34;
+  outline-offset: 2px;
+}
